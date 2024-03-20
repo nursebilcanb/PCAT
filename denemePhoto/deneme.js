@@ -1,6 +1,6 @@
 // Örnek bir dosya (örneğin, db.js)
 const { Sequelize, DataTypes, where } = require('sequelize');
-const config = require('./config/config.json');
+const config = require('../config/config.json');
 
 const sequelize = new Sequelize(config.development);
 
@@ -26,6 +26,7 @@ const findbyIdandUpdate = async (id)=>{
     title: 'Photo 2 Updated',
     description: 'Photo 2 description updated',
     qty: 100
+
   } , {where: {id:id}}) ;
   
   console.log(`Id ye gore guncellenen fotograf : ${JSON.stringify(updatedPhoto,null,2)}`);
